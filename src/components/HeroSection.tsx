@@ -5,7 +5,6 @@ export default function HeroSection() {
     <section className="w-full bg-white py-8 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
-          {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight sm:leading-tight lg:leading-tight">
               Build Your Ideal <br className="hidden sm:inline" />
@@ -20,7 +19,6 @@ export default function HeroSection() {
               project.
             </p>
 
-            {/* CTA Buttons */}
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
               <button className="w-full sm:w-auto px-6 py-3 rounded-xl bg-linear-to-r from-orange-500 via-pink-500 to-violet-600 text-white font-semibold text-sm transition-transform duration-150 active:scale-95 shadow-xs">
                 Explore Technologies
@@ -30,8 +28,6 @@ export default function HeroSection() {
               </button>
             </div>
           </div>
-
-          {/* Banner Image Container */}
           <div className="flex-1 flex justify-center w-full">
             <img
               alt="Dev Stack illustration hero banner"
