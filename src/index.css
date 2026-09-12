@@ -7,3 +7,11 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+@layer utilities {
+  .brand-gradient {
+    @apply bg-linear-to-r from-orange-500 via-pink-500 to-violet-600;
+  }
+  .brand-gradient-text {
+    @apply bg-linear-to-r from-orange-500 via-pink-500 to-violet-600 bg-clip-text text-transparent;
+  }
+}

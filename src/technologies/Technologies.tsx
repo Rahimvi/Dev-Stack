@@ -1,5 +1,6 @@
 import { use, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import StackItemCard from "../components/StackItemCard";
 import TechnologiCard from "../components/TechnologiCard";
 import type { TechItem, TechItemList } from "../type/type";
@@ -18,33 +19,25 @@ export default function Technologies() {
 
   const handleAddToStack = (tech: TechItem) => {
     setAddStack((prev) => [...prev, tech]);
-    toast.success(`Added ${tech.name} to your stack!`, {
-      duration: 2000,
-      position: "bottom-right",
-      icon: "🚀",
-    });
+    toast.success(`Added ${tech.name} to stack!`);
   };
 
   const handleRemoveFromStack = (id: string) => {
     const removedItem = addStack.find((item) => item.id === id);
     setAddStack((prev) => prev.filter((item) => item.id !== id));
-    toast(`${removedItem?.name} removed from stack`, {
-      icon: "🗑️",
-      position: "bottom-right",
-    });
+    if (removedItem) {
+      toast.info(`Removed ${removedItem.name} from stack`);
+    }
   };
 
   const handleClearAll = () => {
     setAddStack([]);
-    toast("Removed all stack", {
-      icon: "🗑️",
-      position: "bottom-right",
-    });
+    toast.error("Cleared all items from your stack!");
   };
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4">
-      <Toaster />
+      <ToastContainer />
       <h3 className="text-3xl font-bold">
         Explore the{" "}
         <span className="bg-linear-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
