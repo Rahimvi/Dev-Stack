@@ -48,7 +48,7 @@ export default function Technologies() {
         Pick one technology per category to build your ideal stack.
       </p>
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-9 p-4">
+        <div className="col-span-12 lg:col-span-9 p-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {technologies.map((tech) => (
               <TechnologiCard
@@ -60,7 +60,7 @@ export default function Technologies() {
             ))}
           </div>
         </div>
-        <div className="col-span-3">
+        <div className="col-span-12 lg:col-span-3">
           <div className="rounded-3xl border border-gray-100 shadow-sm p-4">
             <h2 className="font-bold text-xl text-slate-900">Your Stack</h2>
             {addStack.length === 0 ? (
