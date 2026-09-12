@@ -11,7 +11,13 @@ function App() {
       <div>
         <Nav />
         <HeroSection />
-        <Suspense fallback={<h2>Loading....</h2>}>
+        <Suspense
+          fallback={
+            <div className="flex min-h-100 w-full items-center justify-center">
+              <span className="loading loading-spinner loading-lg text-secondary h-16 w-16"></span>
+            </div>
+          }
+        >
           <Technologies />
         </Suspense>
         <Footer />
