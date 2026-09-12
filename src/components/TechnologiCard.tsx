@@ -2,10 +2,16 @@ import type { TechItem } from "../type/type";
 
 export interface TecnologiCardProps {
   tech: TechItem;
+  addStack: TechItem[];
+  onAddToStack: (tech: TechItem) => void;
 }
 
-export default function TecnologiCard({ tech }: TecnologiCardProps) {
-  console.log(tech, "Card");
+export default function TecnologiCard({
+  tech,
+  addStack,
+  onAddToStack,
+}: TecnologiCardProps) {
+  const isSelected = addStack.find((item) => item.id === tech.id);
   return (
     <div className="w-full max-w-sm rounded-3xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-200 hover:shadow-md">
       {/* Top Header: Icon & Badge */}
@@ -41,7 +47,15 @@ export default function TecnologiCard({ tech }: TecnologiCardProps) {
       </div>
 
       {/* Action Button */}
-      <button className="mt-5 w-full rounded-xl bg-[#090d16] py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-slate-800 active:scale-[0.99]">
+      <button
+        onClick={() => onAddToStack(tech)}
+        disabled={!!isSelected}
+        className={`mt-5 w-full rounded-xl py-3 text-sm font-semibold transition-all duration-150 ${
+          isSelected
+            ? "bg-slate-100 text-slate-400 cursor-not-allowed"
+            : "bg-[#090d16] text-white hover:bg-slate-800 active:scale-[0.99]"
+        }`}
+      >
         Add to Stack
       </button>
     </div>
